@@ -24,12 +24,18 @@ export default function Home() {
       });
   }, []);
 
+  const getProducts = async (categoryId: number) => {
+    const resp = await fetch(`/api/categories/${categoryId}`);
+    const products = await resp.json();
+    console.log(products);
+  }
+
   return (
     <div>
       <h1>Products</h1>
       <ul>
         {categories.map((cat) => (
-          <li key={cat.id}>
+          <li key={cat.id} onClick={() => getProducts(cat.id)}>
             {cat.name}
           </li>
         ))}

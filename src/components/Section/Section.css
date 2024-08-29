@@ -1,0 +1,6 @@
+.section-container {
+  margin-block: 2.5rem;
+  background: #635e5e;
+  padding: 2rem 1rem;
+  border-radius: var(--border-radius);
+}
